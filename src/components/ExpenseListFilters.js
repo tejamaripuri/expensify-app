@@ -17,7 +17,7 @@ class ExpenseListFilters extends React.Component {
         this.setState(() => ({   calendarFocused   }));
     };
     onTextChange = (e) => {
-        this.props.dispatch(setTextFilter(e.target.value));
+        this.props.setTextFilter(e.target.value);
     };
     onSortChange = () => {
         if(e.target.value === 'date') {
@@ -33,7 +33,7 @@ class ExpenseListFilters extends React.Component {
                 <input 
                     type="text" 
                     value={this.props.filters.text} 
-                    onChange={(e) => {this.onTextChange}}
+                    onChange={this.onTextChange}
                 />
                 <select value={this.props.filters.sortBy} onChange={(e) => {
                     if(e.target.value === 'date') {
